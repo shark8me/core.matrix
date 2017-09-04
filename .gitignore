@@ -11,5 +11,5 @@ bench
 .dump
 
 .nrepl-port
-
+/out
 /.lein-failures
