@@ -39,7 +39,7 @@
                              [thinktopic/aljabr "0.1.0-SNAPSHOT" :exclusions [net.mikera/core.matrix]]
                              ]
 
-              :plugins [;[lein-figwheel "0.5.0-6"]
+              :plugins [[lein-figwheel "0.5.0-6"]
                         [lein-doo "0.1.7"]
                         [lein-cljsbuild "1.1.7"]
                         ]
@@ -56,20 +56,15 @@
                                   :compiler {:output-to "resources/public/js/unit-test.js"
                                              :asset-path   "out/"
                                              :main clojure.core.matrix.cljs-runner
-                                        ;:main "clojure.core.matrix.test-basics"
                                              :optimizations :none 
                                              :parallel-build true
                                              :pretty-print false}}}
-                          ;:test-commands {"unit" ["phantomjs" "resources/public/js/unit-test.js"]}
-                          ;:repl-launch-commands {"phantom" ["phantomjs" "phantom/page-repl.js"]}
 
                                         :figwheel {:load-warninged-code true :css-dirs ["resources/public/css"] :server-port 8765}
                           }
              }}
 
   :marginalia {:javascript ["http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"]}
-
-;  :hooks [leiningen.cljsbuild]
 
   :codox {:namespaces [clojure.core.matrix
                        clojure.core.matrix.dataset
