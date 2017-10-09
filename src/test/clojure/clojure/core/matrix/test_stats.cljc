@@ -1,7 +1,12 @@
 (ns clojure.core.matrix.test-stats
-  (:use clojure.core.matrix)
-  (:use clojure.core.matrix.stats)
-  (:use clojure.test))
+  (:require [clojure.core.matrix :as mat]
+            [clojure.core.matrix.stats :as r
+             :refer [mean sum sum-of-squares variance
+                     normalise-probabilities correlation r-squared rmse
+                     cosine-similarity]]
+            #?(:clj [clojure.test :refer [deftest testing is]]
+               :cljs [cljs.test :refer-macros [deftest testing is]]))
+  )
 
 (deftest test-mean
   (is (equals [1 2] (mean [[0 0] [1 2] [2 4]])))
